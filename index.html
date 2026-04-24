@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badminton Tournament Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="masthead">
+            <div class="brand">
+                <div class="logo">🏸</div>
+                <div>
+                    <h1>Badminton Tournament Manager</h1>
+                    <p>Build your event, add players, track scores, and advance winners with a clean tournament dashboard.</p>
+                </div>
+            </div>
+            <p class="hero-note">Responsive UI, dark mode, and animated section transitions make tournament setup fast and enjoyable.</p>
+        <div id="winner-banner" class="winner-banner" style="display:none;">
+            <div>
+                <p>Champion</p>
+                <h2 id="winner-name">-</h2>
+                <span class="winner-tag">You did it!</span>
+            </div>
+        </div>
+        </header>
+
+        <main class="content-grid">
+            <div id="dashboard" style="display:none;" class="dashboard section-panel">
+                <div class="panel-header">
+                    <div>
+                        <p class="panel-label">Dashboard</p>
+                        <h2>Overview</h2>
+                    </div>
+                </div>
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <strong>Tournament</strong>
+                        <p id="dashboard-name">-</p>
+                    </div>
+                    <div class="dashboard-card">
+                        <strong>Players</strong>
+                        <p id="dashboard-players">0</p>
+                    </div>
+                    <div class="dashboard-card">
+                        <strong>Rounds</strong>
+                        <p id="dashboard-rounds">0</p>
+                    </div>
+                    <div class="dashboard-card">
+                        <strong>Status</strong>
+                        <p id="dashboard-status">Not started</p>
+                    </div>
+                </div>
+                <div class="dashboard-actions">
+                    <button id="show-players-btn">Show Players</button>
+                    <button id="show-bracket-btn">Show Bracket</button>
+                    <button id="toggle-theme-btn">🌙 Night Mode</button>
+                    <button id="reset-btn">Reset Tournament</button>
+                </div>
+            </div>
+
+            <section id="create-tournament" class="section-panel visible">
+                <div class="panel-header">
+                    <div>
+                        <p class="panel-label">Step 1</p>
+                        <h2>Create Tournament</h2>
+                    </div>
+                </div>
+                <p class="section-desc">Start with a tournament name to keep your event organized.</p>
+                <div class="inline-form">
+                    <input type="text" id="tournament-name" placeholder="Tournament Name">
+                    <button id="create-btn">Create</button>
+                </div>
+            </section>
+
+            <section id="add-players" style="display:none;" class="section-panel">
+                <div class="panel-header">
+                    <div>
+                        <p class="panel-label">Step 2</p>
+                        <h2>Add Players</h2>
+                    </div>
+                </div>
+                <p class="section-desc">Enter each player name and add them to the roster.</p>
+                <div class="inline-form">
+                    <input type="text" id="player-name" placeholder="Player Name">
+                    <button id="add-player-btn">Add Player</button>
+                </div>
+                <ul id="players-list" class="players-list"></ul>
+                <button class="primary-block" id="start-tournament-btn">Start Tournament</button>
+            </section>
+
+            <section id="tournament-bracket" style="display:none;" class="section-panel">
+                <div class="panel-header">
+                    <div>
+                        <p class="panel-label">Step 3</p>
+                        <h2>Tournament Bracket</h2>
+                    </div>
+                </div>
+                <p class="section-desc">Record match scores and follow the bracket until a champion is crowned.</p>
+                <div id="bracket"></div>
+                <div id="ranking-panel" class="ranking-panel" style="display:none;">
+                    <div class="panel-header">
+                        <div>
+                            <p class="panel-label">Final Ranking</p>
+                            <h3>Placement</h3>
+                        </div>
+                    </div>
+                    <ol id="ranking-list" class="ranking-list"></ol>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
